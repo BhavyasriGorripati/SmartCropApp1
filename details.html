@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Details</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<h1>Crop Details 🌿</h1>
+
+<div class="container">
+
+    <h2 id="cropName"></h2>
+
+    <ul id="details"></ul>
+
+    <button class="green-btn" onclick="next()">Finish</button>
+
+</div>
+
+<script>
+let crop = localStorage.getItem("crop");
+
+document.getElementById("cropName").innerText = crop;
+
+let steps = [
+"Prepare soil properly",
+"Plough the land",
+"Add organic manure",
+"Select quality seeds",
+"Sow seeds properly",
+"Water regularly",
+"Remove weeds",
+"Use pesticides if needed",
+"Monitor crop growth",
+"Protect from pests",
+"Maintain irrigation",
+"Check soil nutrients",
+"Harvest at right time",
+"Dry crop properly",
+"Store safely"
+];
+
+let ul = document.getElementById("details");
+
+steps.forEach(s => {
+    let li = document.createElement("li");
+    li.innerText = s;
+    ul.appendChild(li);
+});
+
+function next() {
+    window.location.href = "thankyou.html";
+}
+</script>
+
+</body>
+</html>

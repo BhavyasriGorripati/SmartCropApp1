@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>How to Grow</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<h1>How to Grow 🌱</h1>
+
+<div class="container">
+
+    <h2 id="cropName"></h2>
+
+    <ol id="steps"></ol>
+
+    <button class="green" onclick="finish()">
+        Finish
+    </button>
+
+</div>
+
+<script>
+let crop = localStorage.getItem("crop");
+
+document.getElementById("cropName").innerText =
+    "Crop: " + crop;
+
+// 15-step guide
+let steps = [
+"Prepare soil properly",
+"Plough the land",
+"Add organic manure",
+"Select quality seeds",
+"Sow seeds correctly",
+"Irrigate regularly",
+"Remove weeds",
+"Apply fertilizers",
+"Protect from pests",
+"Monitor growth",
+"Maintain water level",
+"Check nutrients",
+"Prevent diseases",
+"Harvest at right time",
+"Store safely"
+];
+
+let list = document.getElementById("steps");
+
+steps.forEach(step => {
+    let li = document.createElement("li");
+    li.innerText = step;
+    list.appendChild(li);
+});
+
+// final page
+function finish() {
+    window.location.href = "thankyou.html";
+}
+</script>
+
+</body>
+</html>

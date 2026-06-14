@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Result</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<h1>Recommended Crop 🌾</h1>
+
+<div class="container">
+
+    <h2 id="cropName"></h2>
+
+    <img id="cropImg" width="200">
+
+    <br><br>
+
+    <!-- PESTICIDE BUTTON -->
+    <button class="green" onclick="goPesticide()">
+        View Pesticide 🧪
+    </button>
+
+    <br><br>
+
+    <!-- HOW TO GROW BUTTON -->
+    <button class="green" onclick="goGrow()">
+        How to Grow 🌱
+    </button>
+
+</div>
+
+<script>
+let crop = localStorage.getItem("crop");
+
+document.getElementById("cropName").innerText = crop;
+document.getElementById("cropImg").src = "images/" + crop.toLowerCase() + ".jpg";
+
+// navigation
+function goPesticide() {
+    window.location.href = "pesticide.html";
+}
+
+function goGrow() {
+    window.location.href = "grow.html";
+}
+</script>
+
+</body>
+</html>

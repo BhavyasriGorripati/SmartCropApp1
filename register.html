@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<h1>Smart Crop Registration 🌿</h1>
+
+<div class="container">
+
+    <input type="text" id="name" placeholder="Enter Name">
+    <input type="text" id="email" placeholder="Enter Email">
+    <input type="password" id="password" placeholder="Enter Password">
+
+    <button class="yellow" onclick="registerUser()">
+        Register
+    </button>
+
+</div>
+
+<!-- POPUP BOX -->
+<div id="popup" class="popup">
+    <p id="popupText"></p>
+    <button onclick="closePopup()" class="ok-btn">OK</button>
+</div>
+
+<script>
+function registerUser() {
+
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let password = document.getElementById("password").value;
+
+    if (name === "" || email === "" || password === "") {
+        showPopup("Please fill all fields");
+    } else {
+        showPopup("Successfully Registered");
+    }
+}
+
+// SHOW POPUP
+function showPopup(message) {
+    document.getElementById("popupText").innerText = message;
+    document.getElementById("popup").style.display = "block";
+}
+
+// CLOSE POPUP
+function closePopup() {
+    document.getElementById("popup").style.display = "none";
+    window.location.href = "login.html";
+}
+</script>
+
+</body>
+</html>

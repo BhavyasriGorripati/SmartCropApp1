@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Crop Input</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Soil & Climate Details</h1>
+
+<div class="box">
+
+  <h3>Soil Type</h3>
+  <select id="soil">
+    <option>Black Soil</option>
+    <option>Red Soil</option>
+    <option>Clay Soil</option>
+    <option>Sandy Soil</option>
+  </select>
+
+  <h3>Season</h3>
+  <select id="season">
+    <option>Summer</option>
+    <option>Winter</option>
+    <option>Monsoon</option>
+  </select>
+
+  <input id="water" placeholder="Water Availability (High/Medium/Low)">
+  <input id="temp" placeholder="Temperature">
+
+  <button onclick="getRecommendation()">
+    Get Recommendation
+  </button>
+
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Input</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<h1>Soil & Conditions</h1>
+
+<div class="container">
+
+    <select id="soil">
+        <option>Black Soil</option>
+        <option>Red Soil</option>
+        <option>Clay Soil</option>
+        <option>Sandy Soil</option>
+    </select>
+
+    <select id="season">
+        <option>Summer</option>
+        <option>Winter</option>
+        <option>Monsoon</option>
+    </select>
+
+    <select id="water">
+        <option>High</option>
+        <option>Medium</option>
+        <option>Low</option>
+    </select>
+
+    <input id="temp" placeholder="Temperature">
+
+    <button class="green" onclick="predict()">Get Result</button>
+
+</div>
+
+<script>
+function predict() {
+
+    let soil = document.getElementById("soil").value;
+
+    let crop = "";
+
+    if (soil === "Black Soil") crop = "Cotton";
+    else if (soil === "Red Soil") crop = "Groundnut";
+    else if (soil === "Clay Soil") crop = "Rice";
+    else crop = "Millets";
+
+    localStorage.setItem("crop", crop);
+
+    window.location.href = "result.html";
+}
+</script>
+
+</body>
+</html>

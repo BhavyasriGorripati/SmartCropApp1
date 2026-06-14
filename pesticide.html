@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pesticide</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<h1>Pesticide Details 🧪</h1>
+
+<div class="container">
+
+    <h2 id="cropName"></h2>
+
+    <h3 id="pesticideName"></h3>
+
+    <img id="pesticideImg" width="200">
+
+    <br><br>
+
+    <button class="green" onclick="back()">Back</button>
+
+</div>
+
+<script>
+let crop = localStorage.getItem("crop");
+
+document.getElementById("cropName").innerText = "Crop: " + crop;
+
+let data = {
+    "Rice": {
+        name: "Chlorpyrifos",
+        img: "pesticides/chlorpyrifos.jpg"
+    },
+    "Wheat": {
+        name: "Propiconazole",
+        img: "pesticides/propiconazole.jpg"
+    },
+    "Cotton": {
+        name: "Imidacloprid",
+        img: "pesticides/imidacloprid.jpg"
+    },
+    "Maize": {
+        name: "Atrazine",
+        img: "pesticides/atrazine.jpg"
+    },
+    "Groundnut": {
+        name: "Mancozeb",
+        img: "pesticides/mancozeb.jpg"
+    }
+};
+
+// SHOW DATA
+if (data[crop]) {
+    document.getElementById("pesticideName").innerText =
+        data[crop].name;
+
+    document.getElementById("pesticideImg").src =
+        data[crop].img;
+} else {
+    document.getElementById("pesticideName").innerText =
+        "No pesticide data found";
+}
+
+function back() {
+    window.location.href = "result.html";
+}
+</script>
+
+</body>
+</html>
